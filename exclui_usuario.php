@@ -1,0 +1,16 @@
+<?php
+
+include("conexao.php");
+
+if (isset($_GET['id'])) {
+
+    $id = intval($_GET['id']);
+
+    mysqli_query($con,
+    "DELETE FROM usuarios
+    WHERE id_usuario = $id");
+
+    header("Location: usuarios.php");
+}
+
+?>
